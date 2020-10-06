@@ -141,31 +141,31 @@ Use the game function below to do the following:
   
   HINT: While you can complete this with only conditionals based on strings, it may help to equate choice to a number when using Math.random()
 */
-function game(usersChoice, computersChoice){
+function game(usersChoice1, usersChoice2, usersChoice3, computersChoice){
+  var computersChoice = Math.floor(Math.random()* 2)
   let rock = 0
   let paper = 1
   let scissors = 2
-  var computersChoice = Math.floor(Math.random()* 2)
-  if(usersChoice === rock && computersChoice === scissors){
-    console.log("you win!");
-  }else if(usersChoice === rock && computersChoice === paper){
-    console.log("you lose!");
-  }else if(usersChoice === rock && computersChoice === rock){
-    console.log("it's a tie");
-  }else if(usersChoice === paper && computersChoice === rock){
-    console.log("you win!");
-  }else if(usersChoice === paper && computersChoice === scissors){
-    console.log("you lose!");
-  }else if(usersChoice === paper && computersChoice === paper){
-    console.log("it's a tie");
-  }else if(usersChoice === scissors && computersChoice === paper){
-    console.log("you win!");
-  }else if(usersChoice === scissors && computersChoice === rock){
-    console.log("you lose!");
-  }else{
-    console.log("it's a tie")
+  if(usersChoice1 === rock && computersChoice === scissors){
+    return"you win!";
+  }if(usersChoice1 === rock && computersChoice === paper){
+    return"you lose!";
+  }if(usersChoice1 === rock && computersChoice === rock){
+    return"it's a tie";
+  }if(usersChoice2 === paper && computersChoice === rock){
+    return"you win!";
+  }if(usersChoice2 === paper && computersChoice === scissors){
+    return"you lose!";
+  }if(usersChoice2 === paper && computersChoice === paper){
+    return"it's a tie";
+  }if(usersChoice3 === scissors && computersChoice === paper){
+    return"you win!";
+  }if(usersChoice3 === scissors && computersChoice === rock){
+    return"you lose!";
+  }if(usersChoice3 === scissors && computersChoice === scissors){
+      return"it's a tie";
   }
-  return(game(rock,computersChoice))
+  return(game(rock,paper,scissors,computersChoice));
 }
  
 
@@ -176,13 +176,14 @@ function game(usersChoice, computersChoice){
 /*
 Using the miles function below do the following:
   1. Receive a number of kilometers
-  2. Convert the number of kiolmeters received to miles
+  2. Convert the number of kilometers received to miles
   3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-    /*add your code here*/
+function miles(userInput, convertedMiles){
+    return(userInput / 5280)
   }
+  console.log(miles(5))
 
 
 
