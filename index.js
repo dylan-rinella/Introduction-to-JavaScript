@@ -58,10 +58,10 @@ Do the following:
    3. Multiply a and b and return the answer
 */
 
-function multiply(/*add your code here*/){
-    /*add your code here*/
+function multiply(a, b){
+    return a * b;
   }
-
+console.log(multiply(5,4));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -74,9 +74,10 @@ Do the following:
    3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
-    /*add your code here*/
+function dogYears(humanYears){
+    return humanYears * 7
 }
+console.log(dogYears)
 
 
 
@@ -107,9 +108,23 @@ Use the hungryDog function and feeding requirements below to do the following:
   NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(/*add your code here*/){
-    /*add your code here*/
-  }
+function hungryDog(weight, age){
+   if(weight <= 5 && age >= 1 ){ //older than 1
+     return(weight * .05);
+  }else if(weight === 6 || weight <= 10 && age >= 1){
+     return(weight * .04);
+  }else if(weight === 11 || weight <= 15 && age >= 1){
+    return(weight * .03);
+  }else if(weight >= 15 && age >= 1){
+    return(weight * .02); // younger than 1
+  }else if(age >= .2 || age <= .4){
+    return(age * .10);
+  }else if(age >=.4 || age <=.7){
+    return(age * .05);
+  }else if(age >= .7 || age <= 1){
+   return(age * .04);
+  }}
+  console.log(hungryDog(15,1));
 
 
 
@@ -126,12 +141,33 @@ Use the game function below to do the following:
   
   HINT: While you can complete this with only conditionals based on strings, it may help to equate choice to a number when using Math.random()
 */
-
-function game(/*add your code here*/){
-    /*add your code here*/
+function game(usersChoice, computersChoice){
+  let rock = 0
+  let paper = 1
+  let scissors = 2
+  var computersChoice = Math.floor(Math.random()* 2)
+  if(usersChoice === rock && computersChoice === scissors){
+    console.log("you win!");
+  }else if(usersChoice === rock && computersChoice === paper){
+    console.log("you lose!");
+  }else if(usersChoice === rock && computersChoice === rock){
+    console.log("it's a tie");
+  }else if(usersChoice === paper && computersChoice === rock){
+    console.log("you win!");
+  }else if(usersChoice === paper && computersChoice === scissors){
+    console.log("you lose!");
+  }else if(usersChoice === paper && computersChoice === paper){
+    console.log("it's a tie");
+  }else if(usersChoice === scissors && computersChoice === paper){
+    console.log("you win!");
+  }else if(usersChoice === scissors && computersChoice === rock){
+    console.log("you lose!");
+  }else{
+    console.log("it's a tie")
+  }
+  return(game(rock,computersChoice))
 }
-  
-  
+ 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
