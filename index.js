@@ -141,31 +141,32 @@ Use the game function below to do the following:
   
   HINT: While you can complete this with only conditionals based on strings, it may help to equate choice to a number when using Math.random()
 */
-function game(usersChoice1, usersChoice2, usersChoice3, computersChoice){
-  var computersChoice = Math.floor(Math.random()* 2)
-  let rock = 0
-  let paper = 1
-  let scissors = 2
-  if(usersChoice1 === rock && computersChoice === scissors){
-    return"you win!";
-  }if(usersChoice1 === rock && computersChoice === paper){
-    return"you lose!";
-  }if(usersChoice1 === rock && computersChoice === rock){
-    return"it's a tie";
-  }if(usersChoice2 === paper && computersChoice === rock){
-    return"you win!";
-  }if(usersChoice2 === paper && computersChoice === scissors){
-    return"you lose!";
-  }if(usersChoice2 === paper && computersChoice === paper){
-    return"it's a tie";
-  }if(usersChoice3 === scissors && computersChoice === paper){
-    return"you win!";
-  }if(usersChoice3 === scissors && computersChoice === rock){
-    return"you lose!";
-  }if(usersChoice3 === scissors && computersChoice === scissors){
-      return"it's a tie";
+var computerChoice = Math.random();
+if (computerChoice < 0.34) {
+  computerChoice = "rock";
+} else if(computerChoice <= 0.67) {
+  computerChoice = "paper";
+} else {
+  computerChoice = "scissors";
+}
+function game(userChoice,computerChoice){
+  if (userChoice === computerChoice) {
+    return "it's a tie";
+  } 
+  if ((userChoice === 'rock') && (computerChoice === 'scissors')) {
+    return "you win!";
+  } else if ((userChoice === 'paper') && (computerChoice === 'rock')) {
+    return 'you win!';
+  } else if ((userChoice === 'scissors') && (computerChoice === 'paper')) {
+    return 'you win!';
   }
-  return(game(rock,paper,scissors,computersChoice));
+  if ((userChoice === 'rock') && (computerChoice === 'paper')) {
+    return 'you lose!';
+  } else if ((userChoice === 'paper') && (computerChoice === 'scissors')) {
+    return 'you lose!';
+  } else if ((userChoice === 'scissors') && (computerChoice === 'rock')) {
+    return 'you lose!';
+  }
 }
  
 
@@ -212,8 +213,9 @@ Using the annoyingSong function below do the following:
       "(number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall"
 */
 
-function annoyingSong(/*add your code here*/){
-        /*add your code here*/
+function annoyingSong(bottlesofSoda){
+  for(let i = 99; i < 90; i--){
+      console.log('i' + "bottles of soda on the wall, " + 'i' + " bottles of soda, take one down pass");
   }
 
 
@@ -286,4 +288,4 @@ export default{
     feet,
     annoyingSong,
     grade
-}
+}    
