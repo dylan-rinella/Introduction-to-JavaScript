@@ -213,11 +213,11 @@ Using the annoyingSong function below do the following:
       "(number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall"
 */
 
-function annoyingSong(bottlesofSoda){
-  for(let i = 99; i < 90; i--){
-      console.log('i' + "bottles of soda on the wall, " + 'i' + " bottles of soda, take one down pass");
-  }
-
+function annoyingSong(howManyBottles){
+for (let i = howManyBottles; i > 0; i--) {
+return `${i} bottles of soda on the wall, ${i} bottles of soda, take one down pass it around ${(i-1)} bottles of soda on the wall`    
+}
+}
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
